@@ -271,7 +271,7 @@ P rtP_Left = {
   /* Variable: r_errInpTgtThres
    * Referenced by: '<S20>/r_errInpTgtThres'
    */
-  9600,
+  16000, // CUSTOM CHANGE, DEFAULT: 9600
 
   /* Variable: r_fieldWeakHi
    * Referenced by: '<S42>/r_fieldWeakHi'

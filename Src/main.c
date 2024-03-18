@@ -547,14 +547,17 @@ int main(void) {
         printf("Powering off, temperature is too high\r\n");
       #endif
       poweroff();
+      main(); // CUSTOM CHANGE, DEFAULT: REMOVE MAIN()
     } else if ( BAT_DEAD_ENABLE && batVoltage < BAT_DEAD && speedAvgAbs < 20){
       #if defined(DEBUG_SERIAL_USART2) || defined(DEBUG_SERIAL_USART3)
         printf("Powering off, battery voltage is too low\r\n");
       #endif
       poweroff();
+      main(); // CUSTOM CHANGE, DEFAULT: REMOVE MAIN()
     } else if (rtY_Left.z_errCode || rtY_Right.z_errCode) {                                           // 1 beep (low pitch): Motor error, disable motors
       enable = 0;
       beepCount(1, 24, 1);
+      main(); // CUSTOM CHANGE, DEFAULT: REMOVE MAIN()
     } else if (timeoutFlgADC) {                                                                       // 2 beeps (low pitch): ADC timeout
       beepCount(2, 24, 1);
     } else if (timeoutFlgSerial) {                                                                    // 3 beeps (low pitch): Serial timeout
